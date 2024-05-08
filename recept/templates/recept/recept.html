@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+{% block content %}
+<div class="recept-div">
+    <div>
+        <h1>{{recept.name}}</h1>
+        <p>{{recept.discription}}</p>
+        <p>{{recept.step}}</p>
+        <div >
+            <img src="{{recept.image.url}}" alt="" class="div-img">
+        </div>
+        <p>Автор: {{recept.author}}</p>
+    </div>
+</div>
+{% endblock content %}

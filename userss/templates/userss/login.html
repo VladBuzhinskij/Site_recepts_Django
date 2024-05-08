@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+
+<div class="logform">
+    <h2>{{title}}</h2>
+    <form action="{% url 'userss:login' %}"method="post">
+
+        {% csrf_token %}        
+            <label for="id_username">Имя пользователя</label>
+            <br>
+            <input class="inpreg" name="username" type="text" id="id_username" placeholder="Введите имя пользователя" value="{% if form.username.value %}{{form.username.value}}{% endif %}">
+            <br>
+            <label for="id_password">Пароль</label>
+            <br>
+            <input class="inpreg" type="password" name="password" id="id_password" placeholder="Введите пароль">
+            <br>
+            <button type="submit">Войти</button>
+            <br>
+    </form>
+    <form  action="{% url 'userss:registration' %}">
+        <br>
+        <button class="regbut">Регистрация</button>
+    </form>
+    <form  action="">
+        <button class="regbut">Забыли пароль</button>
+    </form>
+</div>
+
+
+    
+{% endblock content %}
+{% block modal_cart %}
+{% include 'includes/included_carts.html' %}
+{% endblock modal_cart %}  

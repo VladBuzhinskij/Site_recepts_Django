@@ -1,0 +1,82 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static "styles/style.css" %}">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <div class="menu">
+        <form action="">
+            <a href="{% url 'main:index' %}">
+                <p>
+                    Главная
+                </p>
+            </a>
+        </form>
+        <form action="" >
+            <a href="{% url 'recept:category' %}">
+                <p>
+                    Рецепты
+                </p>
+            </a>
+        </form>
+        
+        {% if not user.is_authenticated %}
+            <form  action="">
+                <a href="{% url 'userss:login' %}">
+                    <p>
+                        Войти
+                    </p>
+                </a> 
+            </form>
+        {% else %}
+            <form  action="">
+                <a href="{% url 'userss:logout' %}">
+                    <p>
+                        Выйти
+                    </p>
+                </a>
+            </form>
+            <form  action="">
+                <a href="{% url 'userss:profile' %}">
+                    <p>
+                        Профиль
+                    </p>
+                </a>                
+            </form>
+            <form  action="">
+                <a href="{% url 'recept:new_recept' %}">
+                    <p>
+                        Новый рецепт
+                    </p>
+                </a>
+            </form>
+            {% if user.is_admin or user.is_staff %}
+                <form  action="">
+                    <a href="{% url 'admin:index' %}">
+                        <p>
+                            Админ
+                        </p>
+                    </a>
+                </form>  
+            {% endif %}
+        {% endif %}
+
+
+        
+    </div>
+
+    <div>
+        {% block content %}
+       
+        {% endblock content %}
+    </div>
+
+</body>
+</html>

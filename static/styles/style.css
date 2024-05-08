@@ -1,0 +1,132 @@
+body{
+    background-image: url(background.jpeg);
+    background-size: cover;
+    background-position: 50% 50%;
+    background-attachment: fixed;
+}
+.menu{
+    display: flex;
+    background-color: rgba(207, 0, 0, 0.5);
+    padding-top: 1%;
+    padding-bottom: 1%;
+    padding-left: 2%;
+    padding-right: 2%;
+    
+}
+.menu>form{
+    margin-right: 3%;
+}
+.menu>form>a{
+    font-size: 200%;
+    text-decoration:none;
+}
+.menu>form>input{
+    font-size: 100%;
+}
+.menu>form>a>p{
+    color: aliceblue;
+    margin: 0%;
+}
+.formSearch{
+    margin-left: auto;
+    margin-right: 7.3em;
+}
+.categories{
+    display: grid;
+    grid-template-columns: repeat(3,33vW);
+    grid-template-rows: repeat(3,33vH);
+    width: 100%;
+    height: 300%;
+}
+.category{
+    display: inline;
+    background-color: rgba(50, 49, 49, 0.8);
+    margin: 1% 1% 1% 1%;
+    
+}
+.categoryName{
+    display: flex;
+    text-decoration:none;
+    justify-content: center
+}
+.categoryName>p{
+    color: aliceblue;
+    justify-content: center;
+    font-size: 200%;
+    margin: 0px;
+}
+.SubcategoryName{
+    display:flex;
+    text-decoration:none;
+    padding-left: 3%;
+    padding-right: 3%;
+}
+.SubcategoryName>div{
+    display: f;
+    color: aliceblue;
+}
+.dv{
+    display: flex;
+}
+
+.div-img{
+    
+    width: 100%;
+    height: 100%;
+
+    
+    
+}
+.recept-desc{
+    color: aliceblue;
+    margin: 0% 2% 0% 2%;
+}
+.category-list{
+    display: inline;
+    background-color: rgba(50, 49, 49, 0.8);
+    margin: 1% 1% 1% 1%;
+    border: 3px solid rgb(174, 174, 174);
+    
+}
+.category-list>div{
+    height: 70%;
+}
+.categories-list{
+    display: grid;
+    grid-template-columns: repeat(5,19vW);
+    grid-template-rows: repeat(3,33vH);
+    width: 100%;
+    height: 300%;
+}
+.recept-div{
+    color: aliceblue;
+    background-color: rgba(50, 49, 49, 0.8);
+    margin: 1% 1% 1% 1%;
+    border: 3px solid rgb(174, 174, 174);
+}
+.recept-div>div{
+   margin: 2% 2% 2% 2%;
+}
+.logform{
+    color: aliceblue;
+    background-color: rgba(50, 49, 49, 0.8);
+    margin: 1% 1% 1% 1%;
+    border: 3px solid rgb(174, 174, 174);
+    max-width: 50%;
+    max-height: 50%;
+    display: block;
+    margin-left: auto;
+    margin-right: auto; 
+    text-align: center;}
+
+.logform>h2{
+    text-align: center
+}
+.inttxt{
+  height: 100px;
+  width: 100px;
+}
+h1{
+    color: aliceblue;
+   
+}

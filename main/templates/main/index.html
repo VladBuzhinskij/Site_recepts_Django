@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<h1>{{title}}</h1>
+<div class="poscat">
+    <div class="categories-list">
+        {% for recept in recepts %}
+            <div class="category-list">
+                <a href="{% url 'recept:recept' recept.slug %}" class="categoryName"><p>{{recept.name}}</p></a>
+                <p class="recept-desc">{{recept.discription}}</p>
+                <div >
+                    <img src="{{recept.image.url}}" alt="" class="div-img">
+                </div>
+                
+            </div>
+        {% endfor %} 
+    </div>
+</div>
+{% endblock content %}

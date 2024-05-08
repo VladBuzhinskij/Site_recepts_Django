@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+    <div class="poscat">
+
+        <div class="categories">
+            {% for category in categories %}
+                <div class="category">
+                    <a href="" class="categoryName"><p>{{category.name}}</p></a>
+                    <div class="dv">
+
+                        {% for subcategory in subcategories %}
+                            
+                            {% if category.id == subcategory.category.id %}
+                                
+                                    <a href="{% url 'recept:ReceptsList' subcategory.slug %}" class="SubcategoryName"><div>{{subcategory.name}}  </div></a>
+
+                                
+                            {% endif %}                    
+                        {% endfor %}
+                    </div>
+                </div>
+            {% endfor %} 
+        </div>
+    </div>
+    
+{% endblock content %}

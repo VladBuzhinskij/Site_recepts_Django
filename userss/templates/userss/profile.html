@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block content %}
+<div class="logform">
+    <h2>{{title}}</h2>
+    <form action="{% url 'userss:profile' %}"method="post">
+        {% csrf_token %}
+        <label for="id_username">Имя пользователя</label>
+        <br>
+        <input class="inpreg" name="username" type="text" id="id_username" 
+            placeholder="Введите имя пользователя" 
+            value="{{form.username.value}}"
+            required>
+        <br>
+        {% if form.username.errors %}   
+        <div>{{form.username.errors}}</div>
+        {% endif %}
+        <label for="id_first_name">Имя </label>
+        <br>    
+        <input class="inpreg" name="first_name" type="text" id="id_first_name" 
+            placeholder="Введите имя" 
+            value="{{form.first_name.value}}"
+            required>
+        <br>
+        {% if form.first_name.errors %}   
+        <div>{{form.first_name.errors}}</div>
+        {% endif %}
+        <label for="id_last_name">Фамилия </label>
+        <br>
+        <input class="inpreg" name="last_name" type="text" id="id_last_name" 
+            placeholder="Введите имя" 
+            value="{{form.last_name.value}}"
+            required>
+        <br>
+        {% if form.last_name.errors %}   
+        <div>{{form.last_name.errors}}</div>
+        {% endif %}
+        <label for="id_address">Адрес </label>
+        <br>
+        <input class="inpreg" name="address" type="text" id="id_address" 
+            placeholder="Введите адрес" 
+            value="{{form.address.value}}"
+            required>
+        <br>
+        {% if form.address.errors %}   
+        <div>{{form.address.errors}}</div>
+        {% endif %}
+        <label for="id_email">Email </label>
+        <br>
+        <input class="inpreg" name="email" type="email" id="id_email" 
+            placeholder="Введите почту" 
+            value="{{form.email.value}}"
+            required>
+        <br>
+        {% if form.email.errors %}   
+        <div>{{form.email.errors}}</div>
+        {% endif %}
+        
+        <button type="submit">Сохранить</button>
+        <div>{{form.errors}}</div>
+    </form>
+    
+</div>
+
+{% endblock content %}
